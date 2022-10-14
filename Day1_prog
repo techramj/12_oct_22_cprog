@@ -1,0 +1,199 @@
+Program 1
+void main() {
+	int a = 100;
+	int b = 20;
+	
+	int c = a != b;
+	printf("a=%d,  b=%d, c=%d", a,b,c);
+
+	//address of a
+	printf("address of a =%d", &a);
+	
+}
+
+------------------------------------------------------------
+program 2
+#include<stdio.h>
+//Write a program to add two number
+void main() {
+	int num1, num2, result;
+	printf("enter number :");
+	scanf_s("%d", &num1);
+	printf("enter number :");
+	scanf_s("%d", &num2);
+
+	result = num1 + num2;
+	printf("result = %d", result);
+}
+
+-------------------------------------------------------
+program 3:
+//wap to check the number is postive or negative
+#include<stdio.h>
+void main() {
+	int num1 = 10;
+
+	if (num1 >= 0) {
+		printf("%d is postive", num1);
+	}
+
+	if (num1 < 0) {
+		printf("%d is negative", num1);
+	}
+	    
+}
+
+#include<stdio.h>
+//check the number is postive or negative
+void main() {
+	int num1 = 10;
+
+	if (num1 >= 0) {
+		printf("%d is postive", num1);
+	}
+	else {
+		printf("%d is negative", num1);
+	}    
+}
+-------------------------------------------------------
+program 3:
+#include<stdio.h>
+//check the number is even or odd
+void main() {
+	int num1 = 10;
+
+	if (num1%2 == 0) {
+		printf("%d is even", num1);
+	}
+	else {
+		printf("%d is odd", num1);
+	}    
+}
+----------------------------------------
+program 4:
+#include<stdio.h>
+//print the maximum number among 3
+void main() {
+	int num1 = 10;
+	int num2 = 10;
+	int num3 = 10;
+
+	if (num1 > num2 && num1 > num3) {
+		printf("%d is greatest", num1);
+	}
+	else if (num2 > num3) {
+		printf("%d is greatest", num2);
+	}
+	else {
+		printf("%d is greatest", num3);
+	}
+	   
+}
+---------------------------------------------------
+program 5:
+wap to print the grade based on mark
+mark >=80 and <=100 Grade:A
+mark >=60 and <80  Grade:B
+mark >=40 and <60 Grade:C
+mark >=0 and <40  Grade:Fail
+
+void main() {
+	int mark = 10;
+	char grade;
+
+	if (mark >= 80 ) {
+		grade = 'A';
+	}else if (mark >= 60 ) {
+		grade = 'B';
+	}else if (mark >40 ) {
+		grade = 'C';
+	}else {
+		grade = 'F';
+	}
+
+	printf("Grade=%c", grade);
+
+	
+}
+----------------------------------------------------
+program 3:
+//wap to check the number is postive or negative using ternary operator
+
+condtion ? exp1 : exp2;
+void main() {
+	int num = 10;
+	int res;
+	if (num >= 0) {
+		res = 1;
+	}
+	else {
+		res = 0;
+	}
+
+	res = num >= 0 ? 1 : 0;
+	printf("%d", res);
+
+
+}
+
+
+
+#include<stdio.h>
+void main() {
+	const int x = 100;
+	int month = 110;
+	int a = 4;
+
+
+
+	switch (month) {
+	case 1:printf("Jan"); 
+		break;
+	case 2:printf("Feb");
+		break;
+	case 3:printf("Mar");
+		break;
+	case 4:printf("Apr");
+		break;
+	case 5:printf("May");
+		break;
+	case 6:printf("Jun");
+		break;
+	case 7:printf("Jul");
+		break;
+	case 8:printf("Aug");
+		break;
+	case 9:printf("Sep");
+		break;
+	case 10:printf("oct");
+		break;
+	case 11:printf("nov");
+		break;
+	case 12:printf("dec");
+		break;
+	default: printf("Invalid month");	
+	}
+
+}
+
+
+#include<stdio.h>
+void main() {
+	 int num = 1;
+	 while (num <= 10) {
+		 printf("%d ", num);
+		 num++;
+	 }
+	 printf("\n");
+	 for (num = 1; num <= 10; num++) {
+		 printf("%d ", num);
+	 }
+	 printf("\n");
+
+	 num = 1;
+	 do {
+		 printf("%d ", num);
+		 num++;
+	 } while (num<=10);
+}
+
