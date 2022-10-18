@@ -1,0 +1,190 @@
+1
+12
+123
+1234
+
+
+
+1
+22
+333
+4444
+
+
+1
+23
+456
+7890
+
+
+
+
+*
+**
+***
+****
+
+#include<stdio.h>
+void main() {
+	for (int i = 1; i <= 4; i++) {
+		//print star
+		for (int j = 1; j <= i;j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+
+   *
+  ***
+ *****
+*******
+
+#include<stdio.h>
+void main() {
+	for (int i = 1; i <= 4; i++) {
+		//print space
+		for (int j = 1; j <= 4-i;j++) {
+			printf(" ");
+		}
+
+		//print start
+		for (int j = 1; j <= 2*i-1; j++) {
+			printf("*");
+		}
+
+		printf("\n");
+	}
+}
+
+
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+   
+ void main() {
+	int k;
+	for (int i = 1; i <= 7; i++) {
+		k = 4 - i;
+		k=k < 0 ? k * -1 : k;
+		//print space
+		for (int j = 1; j <= k;j++) {
+			printf(" ");
+		}
+		//print start
+		for (int j = 1; j <= 2*(4-k)-1; j++) {
+			printf("*");
+		}
+
+		printf("\n");
+	}
+}
+
+
+
+
+   1
+  234
+ 56789
+0123456
+ 78901
+  234
+   5
+
+
+   1
+  2 2
+ 3   3
+4     4
+ 3   3
+  2 2
+   1
+
+
+   *
+  * *
+ *   *
+*     *
+ *   *
+  * *
+   *
+
+
+
+wap to print first 50 odd number using while loop
+
+#include<stdio.h>
+
+void main() {
+
+	int itr = 1;
+	int count = 0;
+	printf("\nfirst fifty odd number: \n");
+
+	while (count <= 50) {
+		if (itr % 2 != 0) {
+			printf("%d ", itr);
+			count++;
+		}
+		itr++;
+	}
+}
+
+
+wap to print first 50 odd number using for loop
+#include<stdio.h>
+void main() {
+
+	int itr;
+	int count;
+	printf("\nfirst fifty odd number: \n");
+
+	for (itr=1,count = 0; count != 50; itr++) {
+		if (itr % 2 != 0) {
+			printf("%d ", itr);
+			count++;
+		}
+	}
+}
+
+
+Assignment: wap to print first 50 odd number using do while 
+
+
+wap to print sum of digit of number
+input => 1234  
+output => sum of digit of 1234 = 10
+
+#include<stdio.h>
+
+void main() {
+   
+	int num = 123567;
+	int sum = 0;
+	int lastDigit;
+	int temp = num;
+
+	while (temp != 0) {
+		lastDigit = temp % 10;
+		sum = sum + lastDigit;
+		temp = temp / 10;
+	}
+	
+	printf("The sum of digit of number %d = %d", num, sum);
+
+}
+
+
+wap to print factorial of number
+input = num;
+output = 7*6*5*4*3*2*1 
+
+
+
+
+
