@@ -1,5 +1,29 @@
 prog1: wap to check whether the number is prime or not
 
+#include<stdio.h>
+#include<math.h>
+
+void main() {
+
+	int  num= 9587;
+
+	int flag = 0;
+	for (int i = 2; i <num; i++) {
+		if (num % i == 0) {
+			flag = 1;
+			break;
+		}
+	}
+
+	if (flag == 0) {
+		printf("%d is prime number", num);
+	}
+	else {
+		printf("%d is not a prime number", num);
+	}
+
+}
+
 
 prog 2: print assci character for all value from 1 to 255.
 
