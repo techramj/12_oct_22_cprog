@@ -1,0 +1,140 @@
+prog1: wap to check whether the number is prime or not
+
+
+prog 2: print assci character for all value from 1 to 255.
+
+
+
+prog 3:
+
+enter number1 : ?
+enter number2:  ?
+
+what operation you want
+1. Addition
+2. substraction
+3. Multiplication
+4. division
+5. power
+Enter you choice ? 
+result is : output
+do you want you continue(0/1) : ?
+
+#include<stdio.h>
+
+void main() {
+
+	int choice = 1;
+	int num1, num2;
+	int operationChoice;
+	int result;
+	int isValidChoice = 0;
+
+	do {
+		printf("Enter number1: ");
+		scanf_s("%d", &num1);
+		printf("Enter number2: ");
+		scanf_s("%d", &num2);
+
+		printf("Enter the operation of you choice");
+		printf("\n1. Addition\n2. Substraction\n3. Multiplication\n4. Division\n5. Power");
+		printf("\nenter your choice? ");
+		scanf_s("%d", &operationChoice);
+
+		switch (operationChoice) {
+		case 1:
+			result = num1 + num2;
+			isValidChoice = 1;
+			break;
+		case 2:
+			result = num1 - num2;
+			isValidChoice = 1;	
+			break;
+		case 3:
+			result = num1 * num2;
+			isValidChoice = 1;
+			break;
+		case 4:
+			result = num1 / num2;
+			isValidChoice = 1;
+			break;
+		case 5:
+			isValidChoice = 1;
+			result = 1;
+			for (int i = 1; i <= num2; i++) {
+				result = result * num1;
+			}
+			
+			break;
+		default: printf("Invalid input");
+			isValidChoice = 0;
+		}
+
+		if (isValidChoice == 1) {
+			printf("result = %d ", result);
+		}
+		
+		printf("\nDo you want to continue(1/0)? ");
+		scanf_s("%d", &choice);
+
+	} while (choice == 1);
+
+}
+
+
+Prog 4:
+1: print first 10 prime no
+2: print first 20 prime no
+3: check number is prime or not
+4: check number is odd is even
+5: print assci character for all value from 1 to 255.
+enter your choice ? 1
+
+do you want to continue?
+ 
+ 
+prog 5: 1 20 fibbonaci series
+
+0 1 1 2  3  5  8 13.....
+
+
+prog 6: sum of digit of number
+input: 1234
+output = 10
+
+
+prog 7: reverse the number 
+input :1234
+output: 4321
+
+
+prog 8: 
+   A
+  BCD
+ EFGHI
+JKLMNOP
+
+prog 9:
+   A
+  BCD
+ EFGHI
+JKLMNOP
+ QRSTU
+  VWX
+   Y
+   
+program 10:
+1
+22
+333
+4444
+333
+22
+1
+
+
+
+
+
+
+
