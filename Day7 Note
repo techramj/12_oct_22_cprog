@@ -1,0 +1,160 @@
+Before using function
+
+#include<stdio.h>
+void main() {
+
+	//print first 10 odd number
+	int count = 0;
+	int num = 1;
+	while (count != 10) {
+		if (num % 2 != 0) {
+			printf("%d ", num);
+			count++;
+		}
+		num++;
+
+	}
+
+	printf("\n");
+
+	//print first 20 odd number
+	count = 0;
+	num = 1;
+	while (count != 20) {
+		if (num % 2 != 0) {
+			printf("%d ", num);
+			count++;
+		}
+		num++;
+
+	}
+
+	//first 25 odd number
+	count = 0;
+	num = 1;
+	while (count != 25) {
+		if (num % 2 != 0) {
+			printf("%d ", num);
+			count++;
+		}
+		num++;
+
+	}
+}
+
+
+After using function
+#include<stdio.h>
+void main() {
+
+	printFirstNOddNumber(10);
+
+	printf("\n");
+
+	printFirstNOddNumber(20);
+
+	printf("\n");
+	printFirstNOddNumber(25);
+
+}
+
+void printFirstNOddNumber(int n) {
+	int count = 0;
+	int num = 1;
+	while (count != n) {
+		if (num % 2 != 0) {
+			printf("%d ", num);
+			count++;
+		}
+		num++;
+	}
+}
+
+
+Benefit:
+q. resuablity
+b. modularity
+c. readability
+
+
+
+
+void foo(){
+
+}
+
+returntype name_of_function(type paramter1, type parameter2, ..... )
+{
+
+}
+
+
+
+function is catagorized in 3 part
+declaration
+  declaration of function in header file => extension .h
+definition
+  define all the function declared in header file
+    resource folder => source.c
+calling of function
+   before calling the function
+   include header file 
+   #include "header1.h"
+   
+ 
+function has 3 part
+return_type function_name(parameters)
+
+there are two type of parameter
+a. formal parameter
+b. actual parameter
+   
+   
+
+variable
+local variable  => stack
+memory allocated at runtime => heap
+static variable  => data segment
+
+
+
+Header files-> header1.h
+void printFirstNOddNumber(int n);
+void addNum(int num1, int num2);
+
+
+resource Files -> source.c
+void printFirstNOddNumber(int n) {
+	int count = 0;
+	int num = 1;
+	while (count != n) {
+		if (num % 2 != 0) {
+			printf("%d ", num);
+			count++;
+		}
+		num++;
+	}
+}
+
+void addNum(int num1, int num2) {
+	int result;
+	result = num1 + num2;
+	printf("sum = %d", result);
+}
+
+
+source files
+   main.c
+   
+#include<stdio.h>
+#include "header1.h"
+void main() {
+
+	int a = 10;
+	int b = 20;
+	addNum(a, b);
+}
+
+
+
+stack: last in first out
