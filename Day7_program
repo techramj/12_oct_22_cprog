@@ -1,0 +1,93 @@
+Header file:
+------------------------------------------
+
+void printFirstNOddNumber(int n);
+
+void addNum(int num1, int num2);
+
+int reverseNumber(int num);
+
+void printLine();
+
+double average(int num1, int num2, int num3);
+
+int isPrimeNumber(int numb);
+
+void printFirstNPrimeNumber(int num);
+
+void printFibbonaciSeries(int noOfTerm);
+
+int sumOfDigit(int num);
+
+char assciChar(int value);
+
+
+
+
+source file
+
+void printFirstNOddNumber(int n) {
+	int count = 0;
+	int num = 1;
+	while (count != n) {
+		if (num % 2 != 0) {
+			printf("%d ", num);
+			count++;
+		}
+		num++;
+	}
+}
+
+void addNum(int num1, int num2) {
+	int result;
+	result = num1 + num2;
+	printf("sum = %d", result);
+}
+
+
+int reverseNumber(int num) { //0
+	int temp = num;
+	int revNumber = 0; //4321
+	int rem; //1
+
+	while (temp != 0) {
+		rem = temp % 10;
+		revNumber = revNumber * 10 + rem;
+		temp = temp / 10;
+	}
+	return revNumber;
+}
+
+void printLine() {
+
+	printf("\n------------------------------------------\n");
+}
+
+double average(int num1, int num2, int num3) {
+	double result;
+	result = ((double)num1 + num2 + num3)/3;
+	return result;
+}
+
+
+
+main file
+#include<stdio.h>
+#include "header1.h"
+
+void main() {
+//call the function
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
