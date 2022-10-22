@@ -1,0 +1,147 @@
+--Header.h
+
+void swapNum(int a, int b);--
+void swapNum1(int* a, int* b);
+int areaOfRectangle(int length, int width);
+int perimeterOfRectangle(int length, int width);
+void calulateAreaAndPerimeterOfRectangle(int length, int width, int* areaPtr, int* periPtr);
+
+
+--source.c
+
+void swapNum(int a, int b)
+{
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+
+
+void swapNum1(int* a, int* b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int areaOfRectangle(int length, int width)
+{
+	return length * width;
+}
+int perimeterOfRectangle(int length, int width) {
+	return 2 * (length + width);
+}
+
+void calulateAreaAndPerimeterOfRectangle(int length, int width, int* areaPtr, int* periPtr) {
+	*areaPtr = length * width;
+	*periPtr = 2 * (length + width);
+}
+
+
+
+--program to swap two number by variable
+void main() {
+	int a = 10;
+	int b = 20;
+	printf("Before swapping a= %d, b=%d", a, b);
+	swapNum(a, b);
+	printf("\nAfter swapping a= %d, b=%d", a, b); 
+}
+
+Note: the above function will not swap the number as we are passing the value as pass by value.
+swap is possible by using pass by address:
+
+--program to swap two number by pass by address
+void swapNum1(int* a, int* b)
+{
+	int temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+
+Address demo:
+
+void main() {
+	int a;  //store the integer value
+	double b;
+  
+	int* ptr;  //store the address of integer variable
+	double* ptr2; //store the address of double variable
+	int** ptr3;
+  
+	a = 30;
+	b = 1.2;
+	ptr = &a;
+	ptr2 = &b;
+	ptr3 = &ptr;
+
+	printf("a=%d, b=%lf, address of a = %d,  address of b = %d", a, b, ptr, ptr2);
+
+	//* is called dereferencing operator
+
+	*ptr = 40;
+	*ptr2 = 3.14;
+	printf("\na=%d, b=%lf", a, b);
+
+	**ptr3 = 60;
+	printf("\na=%d, b=%lf", a, b);
+}
+
+
+
+//wap to calculate area and perimeter of rectangle
+
+void main() {
+	int length = 10;
+	int width = 20;
+
+	int area = areaOfRectangle(length, width);
+	int peri = perimeterOfRectangle(length, width);
+
+	printf("area = %d, perimeter=%d", area, peri);
+}
+  
+  
+--single function to calculate area and perimeter
+void main() {
+	int length = 10;
+	int width = 20;
+
+	int area ;
+	int peri;
+
+	calulateAreaAndPerimeterOfRectangle(length, width, &area, &peri);
+
+	printf("area = %d, perimeter=%d", area, peri);
+}
+
+--singlefunction to caluclate reverseOfNumber, sumOfDigit
+
+void calcReverseAndSumOfDigit(int num, int* revPtr, int* sumOfDigitPtr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
