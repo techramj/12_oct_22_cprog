@@ -4,7 +4,9 @@ int add1(int a, int b);
 int add2(int* ptr1, int* ptr2);
 void add3(int* ptr1, int* ptr2, int* resultPtr);
 int acceptNumber();
-
+int fact(int num);
+int sumOfDigit(int x);
+int fibb(int x);
 ________________________________________________________________________________________________________________________________
 
 source.c
@@ -37,6 +39,34 @@ int acceptNumber() {
 	scanf_s("%d", &num);
 	return num;
 }
+
+int fact(int num)
+{
+	if (num == 1 || num == 0) {
+		return 1;
+	}
+	return num * fact(num - 1);
+}
+
+int sumOfDigit(int x) {
+	if (x < 10) {
+		return x;
+	}
+
+	return x % 10 + sumOfDigit(x / 10);
+}
+
+
+int fibb(int x) {
+	if (x == 1) {
+		return 0;
+	}
+	if (x == 2) {
+		return 1;
+	}
+
+	return fibb(x - 2) + fibb(x - 1);
+}
 ________________________________________________________________________________________________________________________________
 
 main.c
@@ -57,11 +87,6 @@ void main()
 
 	printf("Sum = %d", result);
 }
-
-
-
-
-
 
 
 
