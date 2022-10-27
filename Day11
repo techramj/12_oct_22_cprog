@@ -1,0 +1,80 @@
+header.h
+---------
+int add1(int a, int b);
+int add2(int* ptr1, int* ptr2);
+void add3(int* ptr1, int* ptr2, int* resultPtr);
+int acceptNumber();
+
+________________________________________________________________________________________________________________________________
+
+source.c
+------------------
+#include <stdio.h>
+int add1(int a, int b)
+{
+	int sum = a + b;
+	return sum;
+}
+
+
+int add2(int* ptr1, int* ptr2)
+{
+	int res;
+	res = *ptr1 + *ptr2;
+	return res;
+}
+
+
+void add3(int* ptr1, int* ptr2, int* resultPtr)
+{
+  *resultPtr = *ptr1 + *ptr2;
+}
+
+
+int acceptNumber() {
+	int num;
+	printf("\nEnter number: ");
+	scanf_s("%d", &num);
+	return num;
+}
+________________________________________________________________________________________________________________________________
+
+main.c
+------------------------
+#include <stdio.h>
+#include "header.h"
+
+
+void main()
+{
+	int num1 = acceptNumber();
+	int num2 = acceptNumber();
+	int result;
+	//result = add1(num1, num2);
+	//result = add2(&num1, &num2);
+	add3(&num1, &num2, &result);
+
+
+	printf("Sum = %d", result);
+}
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
