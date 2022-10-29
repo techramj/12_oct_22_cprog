@@ -1,0 +1,239 @@
+header.h
+---------------
+
+void accept(int* ptr, int size);
+void display(int* ptr, int size);
+int sumOfArray(int* ptr, int size);
+
+source.c
+------------
+#include<stdio.h>
+
+void accept(int* ptr, int size)
+{
+	for (int i = 0; i < size; i++) {
+		printf("\nEnter number%d: ", i + 1);
+		//scanf_s("%d", ptr + i);
+		scanf_s("%d", &ptr[i]);
+	}
+}
+
+
+void display(int* ptr, int size)
+{
+	for (int i = 0; i < size; i++) {
+		//printf("%d  ", *(ptr + i));
+		printf("%d  ", ptr[i]);
+	}
+	printf("\n");
+}
+
+
+int sumOfArray(int* ptr, int size) {
+	int sum = 0;
+	for (int i = 0; i < size; i++) {
+		sum = sum + ptr[i];
+	}
+
+	return sum;
+}
+
+
+________________________________________________________________________________________________________
+
+main 
+------
+
+#include<stdio.h>
+#include "header.h";
+
+void main()
+{
+	int arr[5];
+	int barr[4];
+
+	printf("Enter number for array arr\n");
+	accept(arr,5);
+
+	printf("\nEnter number for array barr\n");
+	accept(barr,4);
+
+	printf("\nNumber entered in array arr= ");
+	display(arr, 5);
+
+	printf("\nNumber entered in array barr= ");
+	display(barr, 4);
+
+	int res = sumOfArray(arr, 5);
+	printf("\nsum of array arr= %d", res);
+
+
+	res = sumOfArray(barr, 4);
+	printf("\nsum of array barr= %d", res);
+	
+
+}
+
+
+
+
+
+void main7() {
+
+	int arr[5];
+
+	//accessing throught pointer
+	for (int i = 0; i < 5; i++) {
+		printf("\nEnter number%d: ", i + 1);
+		scanf_s("%d", arr+i);
+	}
+
+
+	//printing through the pointer
+	printf("\nNumber entered: ");
+	for (int i = 0; i < 5; i++) {
+		printf("%d  ", *(arr+i));
+	}
+
+}
+
+
+
+void main6() {
+
+	int arr[5];
+
+	printf("arr     = %d\n", arr);
+	printf("&arr[0] = %d", &arr[0]);
+
+	for (int i = 0; i < 5; i++) {
+		printf("\nEnter number%d: ", i + 1);
+		scanf_s("%d", &arr[i]);
+	}
+
+	printf("\nNumber entered: ");
+	for (int i = 0; i < 5; i++) {
+		printf("%d  ", arr[i]);
+	}
+
+	printf("\n*(arr+3)= %d", *(arr + 3));
+
+}
+
+
+
+
+
+void main4()
+{
+	int arr[5];
+	int smallest = 0;
+
+
+	for (int i = 0; i < 5; i++) {
+		printf("Enter number%d: ", i + 1);
+		scanf_s("%d", &arr[i]);
+	}
+
+	printf("\nNumber entered: ");
+	for (int i = 0; i < 5; i++) {
+		printf("%d  ", arr[i]);
+	}
+
+	smallest = arr[0];
+
+	for (int i = 1; i < 5; i++) {
+		if (arr[i] < smallest) {
+			smallest = arr[i];
+		}
+	}
+
+	printf("\nSmallest number: %d",smallest);
+
+
+}
+
+
+
+void main3()
+{
+	int a = 5;
+	//int arr[a];  //not allowed
+	int arr[5];
+	int sum = 0;
+
+
+	for (int i = 0; i < 5; i++) {
+		printf("Enter number%d: ", i+1);
+		scanf_s("%d", &arr[i]);
+	}
+
+	for (int i = 0; i < 5; i++) {
+		sum = sum + arr[i];
+	}
+
+	printf("\nNumber entered: ");
+	for (int i = 0; i < 5; i++) {
+		printf("%d  ", arr[i]);
+	}
+	printf("\nSum = %d", sum);
+
+}
+
+
+
+void main2() {
+	int arr[5];
+	int barr[5] = { 1,2,3,4,5 };
+	int carr[5] = { 1 };
+
+	int darr[5];
+	//darr[5] = { 1,2,3 };  avoid initalizing
+
+
+	arr[0] = 11;
+	arr[1] = 22;
+	arr[3] = 44;
+
+
+	printf("%d", arr[6]);
+	//printf("\n%d", arr[4]); //garbage value
+
+	printf("\narr[0]=%d,  barr[0]=%d,    carr[0]=%d  ", arr[0], barr[0], carr[0]);
+	printf("\narr[4]=%d,  barr[4]=%d,    carr[4]=%d  ", arr[4], barr[4], carr[4]);
+
+}
+
+
+
+
+
+
+void main1() 
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+
+	printf("enter number: ");
+	scanf_s("%d", &a);
+
+	printf("enter number: ");
+	scanf_s("%d", &b);
+
+	printf("enter number: ");
+	scanf_s("%d", &c);
+
+	printf("enter number: ");
+	scanf_s("%d", &d);
+
+	printf("enter number: ");
+	scanf_s("%d", &e);
+
+	int sum = a + b + c + d + e;
+
+}
+
+
