@@ -1,0 +1,279 @@
+#include<stdio.h>
+#include<string.h>
+
+void accept(int* ptr, int size)
+{
+	for (int i = 0; i < size; i++) {
+		printf("\nEnter number%d: ", i + 1);
+		//scanf_s("%d", ptr + i);
+		scanf_s("%d", &ptr[i]);
+	}
+}
+
+
+void display(int* ptr, int size)
+{
+	for (int i = 0; i < size; i++) {
+		//printf("%d  ", *(ptr + i));
+		printf("%d  ", ptr[i]);
+	}
+	printf("\n");
+}
+
+
+int sumOfArray(int* ptr, int size) {
+	int sum = 0;
+	for (int i = 0; i < size; i++) {
+		sum = sum + ptr[i];
+	}
+
+	return sum;
+}
+
+int max(int* ptr, int size)
+{
+	int maxNum = ptr[0];
+
+	for (int i = 1; i < 5; i++) {
+		if (maxNum < ptr[i]) {
+			maxNum = ptr[i];
+		}
+	}
+	return maxNum;
+}
+
+int min(int* ptr, int size)
+{
+	int minNum = ptr[0];
+
+	for (int i = 1; i < 5; i++) {
+		if (minNum > ptr[i]) {
+			minNum = ptr[i];
+		}
+	}
+	return minNum;
+}
+
+
+void minAndMax(int* ptr, int size, int* minValue, int* maxValue)
+{
+	int maxNum = ptr[0];
+	int minNum = ptr[0];
+	for (int i = 1; i < 5; i++) {
+		if (maxNum < ptr[i]) {
+			maxNum = ptr[i];
+		}
+
+		if (minNum > ptr[i]) {
+			minNum = ptr[i];
+		}
+
+		*minValue = minNum;
+		*maxValue = maxNum;	
+	}
+
+}
+
+
+int lenthOfString(char* ptr, int size)
+{
+	int count = 0;
+	for (int i = 0; i < size; i++) {
+		if (ptr[i] == '\0') {
+			return i;
+		}
+	}
+	return 0;
+}
+
+
+int isPalindrome(char* str)
+{
+	//nitin
+	//malyalam
+	//abcd
+	int len = strlen(str);
+
+	for (int i = 0; i <= len / 2; i++) {
+		if (str[i] != str[len - 1 - i]) {
+			return 0;
+		}
+	}
+
+	return 1;
+
+}
+
+
+
+void reverse(char* str)
+{
+	int len = strlen(str);
+	for (int i = 0; i <len / 2; i++) {
+		char temp = str[i];
+		str[i] = str[len - 1 - i];
+		str[len - 1 - i] = temp;
+	}
+}
+
+
+------------------------------------------------
+
+main
+-------------
+
+
+
+#include<stdio.h>
+#include<string.h>
+#include "header.h";
+
+
+void main() {
+	char str[200];
+	printf("Enter string: ");
+	gets(str);
+
+	if (isPalindrome(str)) {
+		printf("%s is palindrome", str);
+	}
+	else {
+		printf("%s is not  palindrome", str);
+	}
+
+	reverse(str);
+	printf("\n%s ", str);
+
+}
+
+
+void main2(){
+	char fname[10];  //raj
+	char lname[10];
+	char name[20];
+
+	printf("Enter firstname: ");
+	gets(fname);
+
+	printf("Enter last name: ");
+	gets(lname);
+
+	int idx = 0;
+
+	while (fname[idx] != '\0') {
+		name[idx] = fname[idx];
+		idx++;
+	}
+	//idx = 3
+
+	name[idx] = ' ';
+	idx++;
+
+	int idx2 = 0;
+	while (lname[idx2] != '\0') {
+		name[idx] = lname[idx2];
+		idx++;
+		idx2++;
+	}
+	name[idx] = '\0';
+
+	printf("\nname=%s", name);
+
+	printf("length of name = %d", strlen(name));
+
+	//assignment
+	//str1,  str2
+	//function compare which compare two string  
+	//str1 = abcd
+	//str = defkdjfkajfd
+}
+
+
+
+
+
+
+void main1()
+{
+
+	int arr[2][3];   //array of an array
+
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("Enter number[%d][%d]: ", i, j);
+			scanf_s("%d", &arr[i][j]);
+		}
+	}
+
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+
+
+
+void main()
+{
+
+	int arr[2][3];   //array of an array
+
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("Enter number[%d][%d]: ", i, j);
+			scanf_s("%d", &arr[i][j]);
+		}
+	}
+
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 3; j++) {
+			printf("%d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+
+
+Assignment:
+a =  1 2 4
+     4 5 6
+	 2 2 2
+	 
+b= 2 2 2
+   2 3 4
+   1 1 1
+   
+c = a+b;
+
+
+
+int *ptr[3];
+(int*)ptr[3];
+
+
+
+
+
+
+
+char firstName[10];
+char lastName[10];
+char name[20];
+
+Vishal
+Rathi
+name = Vishal Rathi;
+
+
+
+
+
+
+
+
+
+
