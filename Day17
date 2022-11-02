@@ -1,0 +1,187 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void acceptMark(int* mark, int n) {
+
+	for (int i = 0; i < n; i++) {
+		printf("Enter mark of Student %d: ", i + 1);
+		scanf_s("%d", mark+i,4);
+	}
+}
+
+void displayMark(int* mark, int n) {
+
+	printf("\nMarks of %d student : ", n);
+	for (int i = 0; i < n; i++) {
+		printf("%d ", *(mark+i));
+	}
+	printf("\n");
+}
+
+
+______________________________________________________________________________________________________________________________________________
+main.c
+---------
+#include<stdio.h>
+#include "header.h"
+
+void main() {
+
+	//mark 10 student
+	int roll[10];
+	int mark[10];
+	char gender[10];
+	char name[10][50];
+	int age[10];
+	int dd[10];
+	int mm[10];
+	int yy[10];
+
+
+	//structure
+
+	int x;
+
+}
+
+
+void main3()
+{
+
+	int* markPtr;
+	int studentCount;
+
+	printf("Enter the number of student: ");
+	scanf_s("%d", &studentCount);
+
+	//markPtr = (int*)malloc(studentCount * sizeof(int));
+
+	markPtr = (int*)calloc(studentCount, sizeof(int));
+
+
+
+	acceptMark(markPtr, studentCount);
+	displayMark(markPtr, studentCount);
+
+	free(markPtr);
+}
+
+
+
+
+
+
+
+
+void main1()
+{
+	int mark[50000];
+	int studentCount;
+
+	printf("Enter the number of student: ");
+	scanf_s("%d", &studentCount);
+
+
+	acceptMark(mark, studentCount);
+	displayMark(mark, studentCount);   
+}
+
+
+
+
+
+/*
+local variable scope -> with the function   validity -> wehn the function end
+global variable scope -> within the project  validity -> when the program end
+static variable scope -> within the function validity -> when the program end
+
+
+
+
+
+
+*/
+
+
+
+//assignment
+//sorting
+10 3  4 6  2
+3 4  6  2  10
+
+
+pass2:
+3 4  6  2  10
+3 4  2  6  10
+
+
+pass3
+3 4  2  6  10
+3 2  4  6  10
+
+
+pass4:
+3 2  4  6  10
+2 3  4  6 10
+
+
+
+selection:
+
+10 3  4 6  2
+
+pass 1:
+2 3  4 6  10
+
+
+
+
+
+
+-------------------------------------------------------
+
+#include<stdio.h>
+int x = 20; //
+
+void test() {
+	static int a = 10;
+	int b = 10;
+	a++;
+	printf("\na=%d", a);
+	printf("\nx=%d", ++x);
+	
+	printf("\n\n");
+
+}
+
+void main() {
+	test();
+	test();
+	test();
+	printf("\nx= %d", x);
+}
+
+/*
+local variable scope -> with the function   validity -> wehn the function end
+global variable scope -> within the project  validity -> when the program end
+static variable scope -> within the function validity -> when the program end
+
+
+
+
+
+*/
