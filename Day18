@@ -222,5 +222,28 @@ dangling pointer exception
 
 
 
+Assignment:
+
+user define datatype:
+student
+   rollno int
+   name   char[30'
+   mark  int
+   
+ struct Student student;
+   
+create variable of student.
+accept the values.
+display:
+
+create pointer of variable.
+struct Student student1;
+ struct Student* studentPtr = &student1;
+ accept the value using pointer;
+ display the value using pointer.
+   
+   
+
+
 
 
