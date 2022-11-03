@@ -1,0 +1,226 @@
+header.h
+----------------
+void acceptMark(int mark[], int n);
+void displayMark(int mark[], int n);
+
+
+struct Date {
+
+	int dd;
+	int mm;
+	int yy;
+};
+
+
+struct Emp
+{
+	int id;
+	char name[30];
+	double salary;
+	struct Date dob;
+	struct Date doj;
+};
+
+
+typedef struct Emp Employee;
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+source.c
+-------------------
+void acceptMark(int* mark, int n) {
+
+	for (int i = 0; i < n; i++) {
+		printf("Enter mark of Student %d: ", i + 1);
+		scanf_s("%d", &mark[i], 4);
+	}
+}
+
+void displayMark(int* mark, int n) {
+
+	printf("\nMarks of %d student : ", n);
+	for (int i = 0; i < n; i++) {
+		printf("%d ", mark[i]);
+	}
+	printf("\n");
+}
+
+
+------------------------------------------------------------------------------------------------------------------- 
+ 
+
+main.c
+----------
+#include<stdio.h>
+#include<string.h>
+#include<malloc.h>
+#include "header.h"
+
+
+
+void main()
+{
+
+	//create custom datatype
+
+	//declare employee
+
+	int a = 10;
+	int* ptr = &a;
+
+	Employee emp1;
+
+	printf("\n%d", a); //10
+	printf("\n%d", &a);  //1000
+	printf("\n%d", ptr);  //1000
+	printf("\n%d", *ptr);  //10
+	printf("\n%d", &ptr); //2000
+
+	struct Date date;
+	date.dd = 3;
+	date.mm = 11;
+	date.yy = 2022;
+
+	struct Date* ptr1 = &date;
+
+	ptr1->dd = 4;
+	ptr1->yy = 2025;
+
+}
+
+void main5()
+{
+	//store the details of employee
+	//id, name, salary, dob, doj
+
+	//store two date in a variable
+	int dd1, dd2;
+	int mm1, mm2;
+	int yy1, yy2;
+
+	dd1 = 3;
+	dd2 = 4;
+
+	mm1 = 9;
+	mm2 = 9;
+
+	yy1 = yy2 = 2022;
+
+	printf("\ntoday date is %d/%d/%d", dd1, mm1, yy1);
+	printf("\nTomorrow date is %d/%d/%d", dd2, mm1, yy2);
+
+
+	//another
+
+	int date[2][3] = { {3,11,2022},{4,11,2022} };
+
+	printf("\ntoday date is %d/%d/%d", date[0][0], date[0][1], date[0][2]);
+	printf("\nTomorrow date is %d/%d/%d", date[1][0], date[1][1], date[1][2]);
+
+	//another way
+	//create custom datatype
+	struct Date date1, date2;
+	date1.dd = 3;
+	date1.mm = 11;
+	date1.yy = 2022;
+
+	date2.dd = 3;
+	date2.mm = 11;
+	date2.yy = 2023;
+
+	printf("\ntoday date is %d/%d/%d", date1.dd, date1.mm,date1.yy);
+	printf("\nTomorrow date is %d/%d/%d", date2.dd, date2.mm, date2.yy);
+
+	//declare employee
+	struct Emp emp;
+	emp.id = 1;
+	printf("\nEnter name: ");
+	get(emp.name);
+
+	printf("\nEnter salary: ");
+	scanf_s("%lf", emp.salary);
+
+	emp.dob.dd = 1;
+	emp.dob.mm = 6;
+	emp.dob.yy = 1989;
+
+	emp.doj.dd = 1;
+	emp.doj.mm = 6;
+	emp.doj.yy = 1989;
+
+
+
+}
+
+void main4()
+{
+	int arr[5];
+	int* markPtr;
+	int studentCount;
+	int* ptr;
+
+	printf("Enter the number of student: ");
+	scanf_s("%d", &studentCount);
+
+	//markPtr = (int*)malloc(studentCount * sizeof(int));
+
+	// (int*)calloc(studentCount, sizeof(int));  //memory leakage
+
+	markPtr = (int*)calloc(studentCount, sizeof(int));  
+	markPtr = (int*)calloc(studentCount, sizeof(int));
+	markPtr = realloc(markPtr, (studentCount + 10) * sizeof(int)); //extednd the memory
+	ptr = markPtr;
+
+	free(ptr);
+
+	//acceptMark(markPtr, studentCount);
+	displayMark(markPtr, studentCount);
+
+	free(markPtr);
+}
+
+
+void main1()
+{
+	int mark[50000];
+	int studentCount;
+
+	printf("Enter the number of student: ");
+	scanf_s("%d", &studentCount);
+
+
+	acceptMark(mark, studentCount);
+	displayMark(mark, studentCount);   
+}
+
+
+
+
+
+/*
+local variable scope -> with the function   validity -> when the function end   memory allocation: stack
+global variable scope -> within the project  validity -> when the program end   memory allocation: Data segement
+static variable scope -> within the function validity -> when the program end   memory allocation: Data segement
+*/
+
+/*
+
+dynamic memory allocation
+malloc(size)
+calloc(num, size_per_element)
+realloc(ptr, new_size);
+free(ptr);
+
+
+keyword:
+memory leakage
+dangling pointer exception
+
+*/
+
+
+
+
+
